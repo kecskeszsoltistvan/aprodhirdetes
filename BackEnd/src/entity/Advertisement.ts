@@ -1,6 +1,7 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "typeorm"
+import { User } from "./User"
 
-export enum AdvertCat{
+export enum AdvertCategory{
     COK = "Service/Cooking",
     EDU = "Service/Education",
     REF = "Service/Restore&Clean",
@@ -13,20 +14,22 @@ export enum AdvertCat{
     GGG = "Goods/Gadgets",
 }
 
+
 @Entity()
 export class Advertisement {
 
     @PrimaryGeneratedColumn()
     id: number
 
-    @Column("int")
-    userID: number
-    
+    @ManyToOne(() => User, (user) => user.advertisements)
+    @JoinColumn({ name: 'userID' })
+    user: User
+
     @Column()
     date: Date
 
-    @Column({type: "enum", enum: AdvertCat, default: AdvertCat.COK})
-    category: AdvertCat
+    @Column({type: "enum", enum: AdvertCategory, default: AdvertCategory.COK})
+    category: AdvertCategory
 
     @Column({length: 24})
     title: string
