@@ -1,6 +1,6 @@
 const userService = require('../services/user.service');
 
-exports.register = async (req, res, next) => {  
+export const register = async (req, res, next) => {  
     try{
 
         let invalidFields = [];
@@ -42,6 +42,8 @@ exports.register = async (req, res, next) => {
         next(error);
     }
 }
+
+
 /*
 exports.login = async (req, res, next) => {
     try{

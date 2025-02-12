@@ -1,12 +1,12 @@
-const express = require('express');
-const router = express.Router();
+import { Router } from "express";
 
 // importáljuk az egyes modulok útvonalait
 const userRoutes = require('./user.router');
 
-// const advertRoutes = require('./subscription.routes');
 
 // regisztráljuk az útvonalakat
+const router = Router();
+
 router.use('/users', userRoutes);
 
 // router.use('/adverts', advertRoutes);
