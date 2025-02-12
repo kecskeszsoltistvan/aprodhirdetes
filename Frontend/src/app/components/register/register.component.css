@@ -1,0 +1,27 @@
+#reg-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 300px;
+    margin-top: 20vh;
+    box-sizing: content-box;
+
+    background: radial-gradient(circle at 100% 100%, var(--mat-sys-surface) 0, var(--mat-sys-surface) 25px, transparent 25px) 0% 0%/30px 30px no-repeat,
+            radial-gradient(circle at 0 100%, var(--mat-sys-surface) 0, var(--mat-sys-surface) 25px, transparent 25px) 100% 0%/30px 30px no-repeat,
+            radial-gradient(circle at 100% 0, var(--mat-sys-surface) 0, var(--mat-sys-surface) 25px, transparent 25px) 0% 100%/30px 30px no-repeat,
+            radial-gradient(circle at 0 0, var(--mat-sys-surface) 0, var(--mat-sys-surface) 25px, transparent 25px) 100% 100%/30px 30px no-repeat,
+            linear-gradient(var(--mat-sys-surface), var(--mat-sys-surface)) 50% 50%/calc(100% - 10px) calc(100% - 60px) no-repeat,
+            linear-gradient(var(--mat-sys-surface), var(--mat-sys-surface)) 50% 50%/calc(100% - 60px) calc(100% - 10px) no-repeat,
+            linear-gradient(#810081 0%, #ffabf3 100%);
+    border-radius: 30px;
+    padding: 35px;
+    box-sizing: content-box;
+}
+div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}

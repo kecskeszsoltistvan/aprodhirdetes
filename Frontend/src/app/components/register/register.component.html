@@ -1,0 +1,22 @@
+<div>
+  <div id="reg-form">
+    <mat-form-field class="example-full-width" >
+      <mat-label>Username</mat-label>
+      <input name="UN" [(ngModel)]="user.name" matInput>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>E-mail</mat-label>
+      <input name="UE" [(ngModel)]="user.email" matInput type="email">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Password</mat-label>
+      <input name="UP" [(ngModel)]="user.password" matInput type="password">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Confirm password</mat-label>
+      <input name="UC" [(ngModel)]="user.confirm" matInput type="password">
+    </mat-form-field>
+    <button mat-flat-button>Sign up</button>
+  </div>
+</div>
+    
