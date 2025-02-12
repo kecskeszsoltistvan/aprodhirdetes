@@ -21,7 +21,7 @@
 }
 #reg-title{
     margin-top: -5px;
-    background: #eedee7;
+    background:linear-gradient(to bottom, #eedee7 50%, var(--mat-sys-primary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
