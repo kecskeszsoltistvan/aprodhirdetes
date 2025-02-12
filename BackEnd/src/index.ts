@@ -7,6 +7,10 @@ const app = express();
 const cors = require('cors');
 const routes = require('./routers/index');
 
+app.use(cors())
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
 app.use('/api', routes);
 
 AppDataSource.initialize().then(async () => {

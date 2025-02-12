@@ -10,7 +10,7 @@ export class MessageService {
   private _snackBar = inject(MatSnackBar);
 
   showMessage(message: string){
-    this._snackBar.open(message);
+    this._snackBar.open(message, "OK", {duration: 5000});
   }
 
 }

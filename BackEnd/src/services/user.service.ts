@@ -6,6 +6,7 @@ const { generateToken } = require('../utils/token');
 
 
 exports.registerUser = async (name, email, password) => {
+    console.log("Attempting to register user...")
     const hashedPassword = await bcrypt.hash(password, 10);
     let user = new User()
     user.name = name;
@@ -17,7 +18,8 @@ exports.registerUser = async (name, email, password) => {
     return user;
 }
 exports.IsEmailUsed = async (email) => {
-    return await AppDataSource.manager.findOneBy(User, {email: email});
+    const result = await AppDataSource.manager.findOneBy(User, {email: email})
+    return result != null;
 }
 /*
 exports.loginUser = async (email, password) => {

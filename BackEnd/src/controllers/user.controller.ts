@@ -28,7 +28,8 @@ export const register = async (req, res, next) => {
             invalidFields.push('confirm');
             return res.status(203).json({message: 'A két jelszó nem egyezik'})
         }
-        if ((await userService.IsEmailUsed(email)).length > 0){
+        console.log(await userService.IsEmailUsed(email));
+        if ((await userService.IsEmailUsed(email))){
             invalidFields.push('email');
             return res.status(203).json({message: 'Az E-mail már regisztrálva van!'})
         }
