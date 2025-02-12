@@ -19,6 +19,12 @@
     padding: 35px;
     box-sizing: content-box;
 }
+#reg-title{
+    margin-top: -5px;
+    background: #eedee7;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 div{
     display: flex;
     flex-direction: column;
