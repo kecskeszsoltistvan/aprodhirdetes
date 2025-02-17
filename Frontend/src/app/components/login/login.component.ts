@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { User } from '../../interface/user';
 import { ApiService } from '../../service/api.service';
 import { AuthService } from '../../service/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,8 @@ export class LoginComponent {
   constructor(
     private message: MessageService,
     private api: ApiService,
-    private auth: AuthService
+    private auth: AuthService,
+    private router: Router
   ){}
   
   user:User = {
@@ -44,6 +46,7 @@ export class LoginComponent {
             confirm: '', 
           }
           this.auth.login(res.token);
+          this.router.navigateByUrl("/");
         }
       }
       catch (err){

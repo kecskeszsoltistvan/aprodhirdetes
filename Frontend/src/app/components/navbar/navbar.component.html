@@ -1,6 +1,18 @@
 <mat-toolbar>
-    <a mat-button disableRipple routerLink=""><p id="SiteTitle">MicRAD</p></a>
+    <a mat-button disableRipple routerLink="">
+      <p id="SiteTitle">MicRAD</p>
+    </a>
+    
+    <a mat-button routerLink="adverts" *ngIf="isLogged">
+      <p>Advertisments</p>
+    </a>
+    
+    <a mat-button routerLink="userAds" *ngIf="isLogged">
+      <p>My adverts</p>
+    </a>
+
     <span class="spacer"></span>
+    
     <div id="navButton">
       <a mat-button routerLink="login" *ngIf="!isLogged">
         <p>Sign in</p>

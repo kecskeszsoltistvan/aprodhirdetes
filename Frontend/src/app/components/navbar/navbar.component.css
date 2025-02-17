@@ -6,7 +6,7 @@
   flex-direction: row;
   flex-wrap: nowrap;
   width: 175px;
-  justify-content: last baseline;
+  justify-content: flex-end;
 }
 #SiteTitle {
   font-size: 1.5rem;
@@ -14,3 +14,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.mat-button-toggle-focus-overlay {
+  display: none;
+  }
