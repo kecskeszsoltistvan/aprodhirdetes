@@ -1,1 +1,15 @@
 <p>login works!</p>
+<div>
+    <div id="log-form">
+      <h1 id="reg-title">Sign in</h1>
+      <mat-form-field class="example-full-width">
+        <mat-label>E-mail</mat-label>
+        <input name="UE" [(ngModel)]="user.email" matInput type="email">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input name="UP" [(ngModel)]="user.password" matInput type="password">
+      </mat-form-field>
+      <button mat-flat-button (click)="login()">Sign in</button>
+    </div>
+  </div>

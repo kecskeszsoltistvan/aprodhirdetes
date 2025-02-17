@@ -31,3 +31,7 @@ div{
     flex-wrap: nowrap;
     align-items: center;
 }
+
+/*
+clip-path: polygon(61% 68%, 80% 0, 100% 0, 100% 100%, 34% 100%, 56% 31%);
+*/

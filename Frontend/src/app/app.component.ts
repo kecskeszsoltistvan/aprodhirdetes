@@ -4,10 +4,11 @@ import { RouterModule } from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { AuthService } from './service/auth.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterModule, CommonModule, MatButtonModule, MatIconModule, MatToolbarModule],
+  imports: [RouterModule, CommonModule, MatButtonModule, MatIconModule, MatToolbarModule, AuthService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -17,4 +18,6 @@ export class AppComponent {
   ngOnInit() {
     console.log("Init.")
   }
+
+  
 }

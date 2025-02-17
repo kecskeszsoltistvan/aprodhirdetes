@@ -45,8 +45,7 @@ export const register = async (req, res, next) => {
 }
 
 
-/*
-exports.login = async (req, res, next) => {
+export const login = async (req, res, next) => {
     try{
         let invalidFields = [];
         const { email, password } = req.body;
@@ -66,6 +65,7 @@ exports.login = async (req, res, next) => {
     }
 }
 
+/*
 exports.getAllUsers = async (req, res, next) => {
     try{
         const users = await userService.getAllUsers();

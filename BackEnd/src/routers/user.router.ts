@@ -11,8 +11,7 @@ const router = Router();
 router.post('/register', userController.register);
 
 // login user
-
-// router.post('/login', userController.login);
+router.post('/login', userController.login);
 
 router.get('/', (req, res) => {res.send("User routes are connected.")});
 module.exports = router;

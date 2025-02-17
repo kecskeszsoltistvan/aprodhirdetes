@@ -21,9 +21,8 @@ exports.IsEmailUsed = async (email) => {
     const result = await AppDataSource.manager.findOneBy(User, {email: email})
     return result != null;
 }
-/*
 exports.loginUser = async (email, password) => {
-    const user = await userMod.findOne({where: { email }});
+    const user = await AppDataSource.manager.findOneBy(User, {email: email});
     if (!user) throw new Error('Nem regisztrált felhasználó!');
     if (!await bcrypt.compare(password, user.password)) throw new Error('Hibás jelszó!');
 
@@ -31,6 +30,7 @@ exports.loginUser = async (email, password) => {
     return { token }; 
 }
 
+/*
 exports.getAllUsers = async () => {
     return await userMod.findAll({
         attributes: {exclude: ['password']}
