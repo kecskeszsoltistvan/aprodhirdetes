@@ -1,0 +1,16 @@
+.spacer {
+    flex: 1 1 auto;
+  }
+#navButton {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 175px;
+  justify-content: last baseline;
+}
+#SiteTitle {
+  font-size: 1.5rem;
+  background: linear-gradient(to right, var(--mat-sys-on-primary) 0%, var(--mat-sys-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
