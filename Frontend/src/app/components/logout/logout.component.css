@@ -1,0 +1,19 @@
+h1 {
+    color: #eedee7;
+    font-size: 4rem;
+    padding: 10px;
+    margin: 100px auto 10px;
+}
+p {
+    color: #eedee7;
+    font-size: 1.25rem;
+    padding: 0px 20vw 10px;
+    margin: 0px auto 10px;
+    text-align: justify;
+    font-weight: bold;
+}
+div {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}

@@ -4,6 +4,12 @@ h1 {
     padding: 10px;
     margin: 100px auto 10px;
 }
+h2 {
+    color: #eedee7;
+    font-size: 2rem;
+    padding: 10px;
+    margin: 10px auto 10px;
+}
 p {
     color: #eedee7;
     font-size: 1.25rem;
@@ -12,8 +18,80 @@ p {
     text-align: justify;
     font-weight: bold;
 }
+.rectangle p {
+    padding: 10px;
+}
 div {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
 }
+
+#showcase {
+    display: flex;
+    flex-flow: row wrap;
+    align-items:first baseline;
+    justify-content: space-evenly;
+
+}
+.rectangle{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 400px;
+    margin-top: 20vh;
+
+    background: radial-gradient(circle at 100% 100%, var(--mat-sys-surface) 0, var(--mat-sys-surface) 25px, transparent 25px) 0% 0%/30px 30px no-repeat,
+            radial-gradient(circle at 0 100%, var(--mat-sys-surface) 0, var(--mat-sys-surface) 25px, transparent 25px) 100% 0%/30px 30px no-repeat,
+            radial-gradient(circle at 100% 0, var(--mat-sys-surface) 0, var(--mat-sys-surface) 25px, transparent 25px) 0% 100%/30px 30px no-repeat,
+            radial-gradient(circle at 0 0, var(--mat-sys-surface) 0, var(--mat-sys-surface) 25px, transparent 25px) 100% 100%/30px 30px no-repeat,
+            linear-gradient(var(--mat-sys-surface), var(--mat-sys-surface)) 50% 50%/calc(100% - 10px) calc(100% - 60px) no-repeat,
+            linear-gradient(var(--mat-sys-surface), var(--mat-sys-surface)) 50% 50%/calc(100% - 60px) calc(100% - 10px) no-repeat,
+            linear-gradient(#810081 0%, #ffabf3 100%);
+    border-radius: 30px;
+    padding: 20px 35px 35px 35px;
+    box-sizing: content-box;
+}
+.rotate {
+    color: black;
+}
+#Animated1 {
+    position: relative;
+    top: +128px;
+    margin: 0px auto;
+    animation: orbit 24s forwards infinite;
+    animation-timing-function: linear;
+  }
+#Animated2 {
+    position: relative;
+    top: +64px;
+    margin: 0px auto;
+    animation: orbit 24s forwards infinite;
+    animation-timing-function: linear;
+    animation-delay: -8s;
+}
+#Animated3 {
+    position: relative;
+    margin: 0px auto;
+    animation: orbit 24s forwards infinite;
+    animation-timing-function: linear;
+    animation-delay: -16s;
+}
+#Dorment {
+    position: relative;
+    top: -64px;
+    margin: 0px auto 0px;
+}
+#share{
+    margin-top: 300px;
+}
+#footer{
+    display: flex;
+    flex-flow: column, nowrap;
+    box-sizing: content-box;
+}
+  @-webkit-keyframes orbit {
+      from {  -webkit-transform: rotate(0deg) translateX(100px) rotate(0deg); }
+      to   {  -webkit-transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+  }

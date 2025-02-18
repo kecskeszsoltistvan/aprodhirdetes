@@ -8,7 +8,7 @@ import { MessageService } from '../../service/message.service';
   standalone: true,
   imports: [],
   templateUrl: './logout.component.html',
-  styleUrl: './logout.component.scss'
+  styleUrl: './logout.component.css'
 })
 
 export class LogoutComponent implements OnInit {
@@ -21,7 +21,6 @@ export class LogoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.auth.logout();
-    this.message.showMessage('Sikeres kijelentkezés');
     setTimeout(() => this.router.navigateByUrl('/'), 5000)
   }
 }
