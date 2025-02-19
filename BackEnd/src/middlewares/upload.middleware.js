@@ -14,11 +14,11 @@ const storage = multer.diskStorage({
 
 // Fájlok szűrése (csak bizonyos típusokat engedünk)
 const fileFilter = (req, file, cb) => {
-    const allowedTypes = ['image/jpeg', 'image/png', 'application/pdf'];
+    const allowedTypes = ['image/jpeg', 'image/png'];
     if (allowedTypes.includes(file.mimetype)) {
         cb(null, true);
     } else {
-        cb(new Error('Csak JPEG, PNG és PDF fájlok tölthetők fel.'));
+        cb(new Error('Csak JPEG és PNG fájlok tölthetők fel.'));
     }
 };
 

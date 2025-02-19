@@ -14,4 +14,5 @@ router.post('/register', userController.register);
 router.post('/login', userController.login);
 
 router.get('/', (req, res) => {res.send("User routes are connected.")});
+
 module.exports = router;

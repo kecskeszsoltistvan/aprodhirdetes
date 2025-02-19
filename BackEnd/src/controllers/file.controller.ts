@@ -1,4 +1,4 @@
-exports.uploadFile = (req, res, next) => {
+export const uploadFile = (req, res, next) => {
     try {
         console.log('Body:', req.body);
         console.log('File:', req.file);

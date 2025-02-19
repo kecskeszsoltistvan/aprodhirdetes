@@ -9,6 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { Advert } from '../../interface/advert';
 import { Category } from '../../interface/category';
+import { AuthService } from '../../service/auth.service';
 
 interface SubCat {
   value: Category;
@@ -31,6 +32,7 @@ interface MainCat {
 export class UserAdsComponent {
   constructor(
     private message: MessageService,
+    private auth: AuthService
   ){}
   ad:Advert = {
     id: "",
@@ -44,6 +46,11 @@ export class UserAdsComponent {
   }
 
   selectedFile: any = null;
+
+  CreateAdvert() {
+    this.ad.userID = this.auth.loggedUser().id
+    console.log(this.ad)
+  }
 
   onFileSelected(event: any): void {
       this.selectedFile = event.target.files[0] ?? null;
@@ -143,8 +150,5 @@ export class UserAdsComponent {
       opacity: 0,
       ease: Power1.easeOut
     })
-  }
-  CreateAdvert() {
-    this.message.showMessage("TBA!")
   }
 }

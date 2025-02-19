@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { User } from '../interface/user'
 import { retry } from 'rxjs';
+import { Advert } from '../interface/advert';
 @Injectable({
   providedIn: 'root'
 })
@@ -29,6 +30,9 @@ export class ApiService {
   }
   login(user:User){
     return this.http.post(this.server + '/users/login', user);
+  }
+  uploadAd(ad:Advert){
+    return this.http.post(this.server + '/', ad);
   }
   // token-nel védett metódusok:
   //  return this.http.get(this.tokenHeader());
