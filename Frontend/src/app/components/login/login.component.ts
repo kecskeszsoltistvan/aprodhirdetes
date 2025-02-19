@@ -46,7 +46,7 @@ export class LoginComponent {
             confirm: '', 
           }
           this.auth.login(res.token);
-          this.router.navigateByUrl("/");
+          this.router.navigateByUrl("/userPanel");
         }
       }
       catch (err){

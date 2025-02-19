@@ -2,19 +2,32 @@ import { AfterViewInit, Component } from '@angular/core';
 import { MessageService } from '../../service/message.service';
 import { CommonModule } from '@angular/common';
 import { gsap, Back, Power1 } from "gsap";
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { Advert } from '../../interface/advert';
 import { Category } from '../../interface/category';
 
+interface SubCat {
+  value: Category;
+  viewValue: string;
+}
+
+interface MainCat {
+  disabled?: boolean;
+  name: string;
+  cat: SubCat[];
+}
+
 @Component({
   selector: 'app-user-ads',
-  imports: [FormsModule, CommonModule, MatFormFieldModule, MatButtonModule, MatInputModule],
+  imports: [MatSelectModule, FormsModule, CommonModule, MatFormFieldModule, MatButtonModule, MatInputModule, ReactiveFormsModule],
   templateUrl: './user-ads.component.html',
   styleUrl: './user-ads.component.css'
 })
+
 export class UserAdsComponent {
   constructor(
     private message: MessageService,
@@ -29,6 +42,63 @@ export class UserAdsComponent {
     image: "",
     category: Category.COK,
   }
+
+  selectedFile: any = null;
+
+  onFileSelected(event: any): void {
+      this.selectedFile = event.target.files[0] ?? null;
+  }
+
+
+  Control = new FormControl('');
+  Groups: MainCat[] = [
+    {
+      name: "Service",
+      cat:  [
+        {
+          value: Category.COK, viewValue: "Cooking"
+        },
+        {
+          value: Category.EDU, viewValue: "Education"
+        },
+        {
+          value: Category.REF, viewValue: "Restore & Clean"
+        },
+        {
+          value: Category.ETC, viewValue: "Other"
+        },
+      ]
+    },
+    {
+      name: "Job",
+      cat:  [
+        {
+          value: Category.JSC, viewValue: "Apply"
+        },
+        {
+          value: Category.JSJ, viewValue: "Applying"
+        },
+      ]
+    },
+    {
+      name: "Goods",
+      cat:  [
+        {
+          value: Category.GCL, viewValue: "Clothing"
+        },
+        {
+          value: Category.GHA, viewValue: "Household"
+        },
+        {
+          value: Category.GCO, viewValue: "Collectable"
+        },
+        {
+          value: Category.GGG, viewValue: "Gadgets"
+        },
+      ]
+    },
+  ];
+
 
   ngAfterViewInit(): void {
     const tl = gsap.timeline();

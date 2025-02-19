@@ -16,6 +16,12 @@ p {
     text-align: justify;
     font-weight: bold;
 }
+span {
+    color: #eedee7;
+    font-size: 1rem;
+    text-align: justify;
+    font-weight: bold;
+}
 #griddy {
     display: flex;
     flex-flow: column nowrap;
@@ -36,7 +42,7 @@ p {
     flex-flow: column wrap;
     align-items: stretch;
     justify-content: space-evenly;
-    flex-grow: 8;
+    flex-grow: 6;
     gap: 25px;
 }
 #subrow{
