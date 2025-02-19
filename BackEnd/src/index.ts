@@ -6,6 +6,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const routes = require('./routers/index');
+const multer  = require('multer');
 
 app.use(cors())
 app.use(express.json());

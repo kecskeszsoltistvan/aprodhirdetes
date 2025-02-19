@@ -35,6 +35,10 @@
                 <mat-label>Description</mat-label>
                 <textarea matInput [(ngModel)]="ad.description"></textarea>
             </mat-form-field>
+            <mat-form-field>
+                <mat-label>Price</mat-label>
+                <input name="ADP" [(ngModel)]="ad.price" type="number   " matInput>
+            </mat-form-field>
 
             <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
             <input hidden (change)="onFileSelected($event)" #fileInput type="file" accept="image/png, image/jpeg">
@@ -56,6 +60,7 @@
                 </mat-select>
             </mat-form-field>
               
+            <button mat-flat-button (click)="CreateAdvert()">Create</button>
             
         </div>
     </div>
