@@ -74,7 +74,7 @@ export class HomeComponent implements AfterViewInit {
     });
 
     tl.fromTo("#share", {opacity: 0}, {
-      y: -300,
+      y: -200,
       ease: Power1.easeOut,
       opacity: 1,
       scrollTrigger: {

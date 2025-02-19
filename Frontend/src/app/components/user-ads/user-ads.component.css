@@ -4,6 +4,12 @@ h1 {
     text-align: justify;
     font-weight: bold;
 }
+h2 {
+    color: #eedee7;
+    font-size: 1.5rem;
+    padding: 10px;
+    margin: 10px auto 10px;
+}
 p {
     color: #eedee7;
     font-size: 1.25rem;
@@ -11,25 +17,49 @@ p {
     font-weight: bold;
 }
 #griddy {
-    display: grid;
-    grid-template-columns: calc(30px + 10vw) repeat(5, 1fr) calc(30px + 10vw);
-    grid-template-rows: repeat(5, 150px);
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#row{
+    width: 85vw;
+    min-height: 500px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 25px;
+}
+#middle{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: stretch;
+    justify-content: space-evenly;
+    flex-grow: 8;
+    gap: 25px;
+}
+#subrow{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: space-evenly;
+    gap: 25px;
 }
 #title{
     grid-area: 1 / 2 / 2 / 7;
     justify-self: center;
     font-size: 4rem;
 }
-
+.side-panel{
+    flex-grow: 1;
+}
 .floaty-panel {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-evenly;
-    box-sizing: content-box;
     background: radial-gradient(circle at 100% 100%, var(--mat-sys-surface) 0, var(--mat-sys-surface) 25px, transparent 25px) 0% 0%/30px 30px no-repeat,
             radial-gradient(circle at 0 100%, var(--mat-sys-surface) 0, var(--mat-sys-surface) 25px, transparent 25px) 100% 0%/30px 30px no-repeat,
             radial-gradient(circle at 100% 0, var(--mat-sys-surface) 0, var(--mat-sys-surface) 25px, transparent 25px) 0% 100%/30px 30px no-repeat,

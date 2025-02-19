@@ -8,3 +8,18 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+::-webkit-scrollbar{
+    width: 20px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(0deg, rgba(129,0,129,1) 0%, rgba(255,171,243,1) 50%, rgba(129,0,129,1) 100%);
+    border-radius: 10px;
+    box-sizing: content-box;
+    transition-duration: 500ms;
+}
+
+::-webkit-scrollbar-track{
+    background: linear-gradient(0deg, rgba(129,0,129,1) 0%,rgba(0,0,0,1) 25%);
+}
