@@ -7,7 +7,7 @@ exports.createAd = async (title, description, price, image, category) => {
     ad.title = title;
     ad.description = description;
     ad.price = price;
-    ad.image = "";
+    ad.image = image;
     ad.category = category;
 
     await AppDataSource.manager.save(ad);

@@ -34,18 +34,21 @@ export class UserAdsComponent {
     private message: MessageService,
     private auth: AuthService
   ){}
+  un:string = "";
   ad:Advert = {
     id: "",
     userID: "",
-    date: Date.now(),
+    date: `${new Date().toLocaleDateString('en-CA')}`,
     title: "",
     description: "",
     price: 0,
-    image: "",
+    image: null,
     category: Category.COK,
   }
 
-  selectedFile: any = null;
+  ngOnInit() {
+    this.un = this.auth.loggedUser().name;
+  }
 
   CreateAdvert() {
     this.ad.userID = this.auth.loggedUser().id
@@ -53,7 +56,7 @@ export class UserAdsComponent {
   }
 
   onFileSelected(event: any): void {
-      this.selectedFile = event.target.files[0] ?? null;
+      this.ad.image = event.target.files[0] ?? null;
   }
 
 

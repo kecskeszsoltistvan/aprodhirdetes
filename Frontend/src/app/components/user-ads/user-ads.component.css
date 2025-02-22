@@ -21,6 +21,8 @@ span {
     font-size: 1rem;
     text-align: justify;
     font-weight: bold;
+    width: 210px;
+    padding: 0px 0px 15px;
 }
 #griddy {
     display: flex;

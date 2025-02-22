@@ -1,7 +1,7 @@
 <!-- Sexy user panel-->
 <div id="griddy">
     <h1 id="title">
-        Welcome back!
+        Welcome back, {{un}}!
     </h1>
     <div id="row">
         <div class="floaty-panel side-panel" id="MyCurrentAdverts">
@@ -37,12 +37,12 @@
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Price</mat-label>
-                <input name="ADP" [(ngModel)]="ad.price" type="number   " matInput>
+                <input name="ADP" [(ngModel)]="ad.price" type="number" matInput>
             </mat-form-field>
 
             <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
             <input hidden (change)="onFileSelected($event)" #fileInput type="file" accept="image/png, image/jpeg">
-            <span class="file-name">{{selectedFile?.name}}</span>
+            <span class="file-name">{{ad.image?.name}}</span>
 
 
             <mat-form-field>

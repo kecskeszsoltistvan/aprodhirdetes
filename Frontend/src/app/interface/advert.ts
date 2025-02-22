@@ -2,10 +2,10 @@ import { Category } from "./category";
 export interface Advert {
     id: string,
     userID: string,
-    date: number,
+    date: string,
     title: string,
     description: string,
     price: number,
-    image: string,
+    image: any,
     category: Category,
 }

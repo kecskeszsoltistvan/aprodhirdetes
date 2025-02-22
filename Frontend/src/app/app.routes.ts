@@ -5,6 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { AdvertsComponent } from './components/adverts/adverts.component';
 import { UserAdsComponent } from './components/user-ads/user-ads.component';
+import { UserAuthGuard } from './guard/logged.guard';
 
 export const routes: Routes = [
 
@@ -24,7 +25,7 @@ export const routes: Routes = [
     path: 'adverts', component: AdvertsComponent
   },
   {
-    path: 'userPanel', component: UserAdsComponent
+    path: 'userPanel', component: UserAdsComponent, canActivate: [UserAuthGuard]
   },
   {
     path: '**', component: HomeComponent

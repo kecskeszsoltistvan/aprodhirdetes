@@ -13,7 +13,8 @@ export class UserAuthGuard implements CanActivate {
   canActivate(): boolean {
     const isLoggedIn = this.auth.isLoggedUser();
     if (!isLoggedIn){
-      this.router.navigate(['/']);
+      this.router.navigate(['/login']);
+      return false;
     }
     return true;
   }
