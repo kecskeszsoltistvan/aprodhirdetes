@@ -10,7 +10,8 @@ const router = Router();
 
 // add new ad;
 router.post('/add', upload.single('file'), advertController.add, fileController.uploadFile);
-router.post('/fetchByID', advertController.fetch)
+router.post('/fetchByID', advertController.fetch);
+router.get('/fetchAll', advertController.fetchAll);
 
 router.get('/', (req, res) => {res.send("Advert routes are connected.")});
 

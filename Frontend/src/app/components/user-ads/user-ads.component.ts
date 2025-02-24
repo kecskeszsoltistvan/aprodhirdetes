@@ -75,6 +75,7 @@ export class UserAdsComponent {
     this.api.uploadAd(formData).subscribe((res:any) => {
       this.message.showMessage(res.message);
     })
+    this.loadMyAds(this.uid);
   }
 
   onFileSelected(event: any): void {

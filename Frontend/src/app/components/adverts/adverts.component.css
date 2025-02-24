@@ -1,8 +1,60 @@
+#title{
+    justify-self: center;
+    text-align: center;
+    font-size: 3rem;
+}
 p {
     color: #eedee7;
     font-size: 1.25rem;
-    padding: 0px 20vw 10px;
-    margin: 0px auto 10px;
     text-align: justify;
     font-weight: bold;
+}
+h2 {
+    color: #eedee7;
+    font-size: 1.5rem;
+    padding: 10px;
+    margin: 10px auto 10px;
+}
+
+.advert{
+    max-width: 300px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    background: radial-gradient(circle at 100% 100%, var(--mat-sys-surface) 0, var(--mat-sys-surface) 25px, transparent 25px) 0% 0%/30px 30px no-repeat,
+            radial-gradient(circle at 0 100%, var(--mat-sys-surface) 0, var(--mat-sys-surface) 25px, transparent 25px) 100% 0%/30px 30px no-repeat,
+            radial-gradient(circle at 100% 0, var(--mat-sys-surface) 0, var(--mat-sys-surface) 25px, transparent 25px) 0% 100%/30px 30px no-repeat,
+            radial-gradient(circle at 0 0, var(--mat-sys-surface) 0, var(--mat-sys-surface) 25px, transparent 25px) 100% 100%/30px 30px no-repeat,
+            linear-gradient(var(--mat-sys-surface), var(--mat-sys-surface)) 50% 50%/calc(100% - 10px) calc(100% - 60px) no-repeat,
+            linear-gradient(var(--mat-sys-surface), var(--mat-sys-surface)) 50% 50%/calc(100% - 60px) calc(100% - 10px) no-repeat,
+            linear-gradient(#810081 0%, #ffabf3 100%);
+    border-radius: 30px;
+    padding: 20px;
+    width: max-content;
+    box-sizing: content-box;
+}
+.adRow{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    min-width: 240px;
+    max-width: 300px;
+}
+.type{
+    font-weight: 300;
+    font-size: 0.75rem;
+}
+.price{
+    background: linear-gradient(#eedee7 0%, #ffabf3 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    align-self: right;
+    max-width: 80px;
+}
+img{
+    max-width: 100px;
+    max-height: 100px;
 }

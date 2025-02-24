@@ -45,6 +45,9 @@ export class ApiService {
   getUserAds(uid:JSON){
     return this.http.post(this.server + '/adverts/fetchByID', uid);
   }
+  getAllAds(){
+    return this.http.get(this.server + '/adverts/fetchAll');
+  }
   // token-nel védett metódusok:
   //  return this.http.get(this.tokenHeader());
 }

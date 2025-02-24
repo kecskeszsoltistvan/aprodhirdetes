@@ -41,3 +41,14 @@ export const fetch = async (req, res) => {
         return res.status(406).json({message: `Failed to fetch user's ads.`});
     }
 }
+export const fetchAll = async (req, res) => {
+    console.log(`FetchAll called...`);
+    try{
+        const ads = await AppDataSource.manager.find(Advertisement);
+        return res.status(200).json({allAds: ads});
+    }
+    catch (error) 
+    {
+        return res.status(500).json({message: `Failed to fetch ads: ${error}`});
+    }
+}
