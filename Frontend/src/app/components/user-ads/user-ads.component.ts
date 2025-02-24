@@ -64,6 +64,12 @@ export class UserAdsComponent {
     this.loadMyAds(this.uid);
   }
 
+  Delete(img:string){
+    this.api.deleteAdByIMG(img).subscribe((res:any) =>{
+      this.message.showMessage(res.message);
+      this.loadMyAds(this.uid);
+    })
+  }
 
   CreateAdvert() {
     this.ad.userID = this.auth.loggedUser().id

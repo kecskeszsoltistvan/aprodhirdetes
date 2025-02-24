@@ -10,6 +10,7 @@
                 <div class="advert">
                     <div class="adRow">
                         <h2>{{ad.title}}</h2>
+                        <button mat-flat-button (click)="Delete(ad.image)">X</button>
                     </div>
                     <p>{{ad.description}}</p>
                     <img src="http://localhost:3000/uploads/{{ad.image}}">

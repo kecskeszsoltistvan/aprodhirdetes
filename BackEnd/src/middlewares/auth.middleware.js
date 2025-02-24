@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
-const config = require('../config/config');
+require('dotenv').config()
+
 
 const authMiddleware = (req, res, next) => {
     const token = req.headers.authorization?.split(' ')[1]; // 'Bearer <token>'
@@ -12,7 +13,7 @@ const authMiddleware = (req, res, next) => {
     }
 
     try {
-        const decoded = jwt.verify(token, config.jwtSecret);
+        const decoded = jwt.verify(token, process.env.JWT); 
         req.user = decoded; 
         next(); 
     } catch (error) {

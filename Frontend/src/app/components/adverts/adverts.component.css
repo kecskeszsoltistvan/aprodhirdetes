@@ -52,7 +52,6 @@ h2 {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     align-self: right;
-    max-width: 80px;
 }
 img{
     max-width: 100px;
