@@ -25,8 +25,8 @@ export class Advertisement {
     @JoinColumn({ name: 'userID' })
     user: User
 
-    @Column()
-    date: Date
+    @Column({ type: 'date'})
+    date: string;
 
     @Column({type: "enum", enum: AdvertCategory, default: AdvertCategory.COK})
     category: AdvertCategory

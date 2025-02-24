@@ -5,15 +5,14 @@ import { User } from "../entity/User";
 export const add = async (req, res, next) => {
 
     try {
-            console.log(req);
-            const {title, description, price, image, category, userID} = JSON.parse(req.body.fos);
-            if (!title || !description || !price || !image || !category || !userID) {
+            const {title, description, price, image, category, userID, date} = JSON.parse(req.body.fos);
+            if (!title || !description || !price || !image || !category || !userID || !date) {
                 return res.status(203).json({ message: `Missing data! (${JSON.stringify(req.body.fos)})`});
 
             }
             const user = await AppDataSource.manager.findOneBy(User, {id: userID})
             console.log(`${user}: ${userID}`)
-            //const ad = await advertService.createAd(title, description, price, req.file.filename, category, user)
+            const ad = await advertService.createAd(title, description, price, req.file.filename, category, user, date)
             console.log('Advert passed the controller check...')
 
         next();
