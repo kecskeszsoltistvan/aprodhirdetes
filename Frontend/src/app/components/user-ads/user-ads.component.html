@@ -41,7 +41,7 @@
             </mat-form-field>
 
             <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
-            <input hidden (change)="onFileSelected($event)" #fileInput type="file" accept="image/png, image/jpeg">
+            <input hidden (change)="onFileSelected($event)" #fileInput type="file" accept="image/png, image/jpeg" name="image-file-input">
             <span class="file-name">{{ad.image?.name}}</span>
 
 

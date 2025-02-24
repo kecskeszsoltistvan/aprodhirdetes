@@ -2,14 +2,14 @@ import { Router } from "express";
 
 // importáljuk az egyes modulok útvonalait
 const userRoutes = require('./user.router');
+const advertRoutes = require('./advert.router');
 
 
 // regisztráljuk az útvonalakat
 const router = Router();
 
 router.use('/users', userRoutes);
-
-// router.use('/adverts', advertRoutes);
+router.use('/adverts', advertRoutes);
 
 router.get('/', (req, res) => {
     res.send(`Router pinged.`);

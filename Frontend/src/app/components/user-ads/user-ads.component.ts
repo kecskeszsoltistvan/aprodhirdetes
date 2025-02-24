@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { Advert } from '../../interface/advert';
 import { Category } from '../../interface/category';
 import { AuthService } from '../../service/auth.service';
+import { ApiService } from '../../service/api.service';
 
 interface SubCat {
   value: Category;
@@ -32,7 +33,8 @@ interface MainCat {
 export class UserAdsComponent {
   constructor(
     private message: MessageService,
-    private auth: AuthService
+    private auth: AuthService,
+    private api: ApiService
   ){}
   un:string = "";
   ad:Advert = {
@@ -53,6 +55,13 @@ export class UserAdsComponent {
   CreateAdvert() {
     this.ad.userID = this.auth.loggedUser().id
     console.log(this.ad)
+    const formData = new FormData();
+    formData.append("file", this.ad.image)
+    formData.append("fos", JSON.stringify(this.ad))
+
+    this.api.uploadAd(formData).subscribe((res:any) => {
+      this.message.showMessage(res.message);
+    })
   }
 
   onFileSelected(event: any): void {

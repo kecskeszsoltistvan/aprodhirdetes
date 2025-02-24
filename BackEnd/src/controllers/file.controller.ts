@@ -23,7 +23,9 @@ export const uploadFile = (req, res, next) => {
                 size: file.size,
             },
         });
-    } catch (error) {
+        next();
+    } 
+    catch (error) {
         next(error); 
     }
 };

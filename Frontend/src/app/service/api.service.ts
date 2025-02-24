@@ -12,6 +12,11 @@ export class ApiService {
   constructor(private http: HttpClient) { }
   private tokenName = environment.tokenName;
   private server = environment.serverUrl;
+  private httpOptions = {
+    headers: new HttpHeaders({
+     "Content-Type": "multipart/form-data"
+    })
+  };
   
   getToken():String | null{
     return localStorage.getItem(this.tokenName);
@@ -28,11 +33,13 @@ export class ApiService {
   userRegistration(user:User){
     return this.http.post(this.server + '/users/register', user);
   }
+
   login(user:User){
     return this.http.post(this.server + '/users/login', user);
   }
-  uploadAd(ad:Advert){
-    return this.http.post(this.server + '/', ad);
+
+  uploadAd(ad:FormData){
+    return this.http.post(this.server + '/adverts/add', ad);
   }
   // token-nel védett metódusok:
   //  return this.http.get(this.tokenHeader());
