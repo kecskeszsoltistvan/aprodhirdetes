@@ -1,6 +1,7 @@
 const advertService = require('../services/advert.service');
 import { AppDataSource } from "../data-source";
 import { User } from "../entity/User";
+import { Advertisement } from "../entity/Advertisement";
 
 export const add = async (req, res, next) => {
 
@@ -19,5 +20,24 @@ export const add = async (req, res, next) => {
     }
     catch(error){
         next(error);
+    }
+}
+export const fetch = async (req, res) => {
+    console.log(`Fetch called...`);
+    console.log(req.body.userID);
+    try{
+        
+        const uid = req.body.userID;
+        console.log(`Attempting to fetch data by userID: ${uid}`)
+        if (!uid){
+            return res.status(406).json({message: `Failed to fetch UID.`})
+        }
+        const currentUser = await AppDataSource.manager.findBy(User, {id: uid})
+        const ads = await AppDataSource.manager.findBy(Advertisement, {user: currentUser})
+        return res.status(200).json({userAds: ads});
+    }
+    catch (error) 
+    {
+        return res.status(406).json({message: `Failed to fetch user's ads.`});
     }
 }

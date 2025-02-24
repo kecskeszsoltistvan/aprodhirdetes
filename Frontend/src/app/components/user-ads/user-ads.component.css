@@ -55,7 +55,6 @@ span {
     gap: 25px;
 }
 #title{
-    grid-area: 1 / 2 / 2 / 7;
     justify-self: center;
     font-size: 4rem;
 }
@@ -78,4 +77,43 @@ span {
     border-radius: 30px;
     padding: 20px;
     box-sizing: content-box;
+}
+.advert{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    background: radial-gradient(circle at 100% 100%, var(--mat-sys-surface) 0, var(--mat-sys-surface) 25px, transparent 25px) 0% 0%/30px 30px no-repeat,
+            radial-gradient(circle at 0 100%, var(--mat-sys-surface) 0, var(--mat-sys-surface) 25px, transparent 25px) 100% 0%/30px 30px no-repeat,
+            radial-gradient(circle at 100% 0, var(--mat-sys-surface) 0, var(--mat-sys-surface) 25px, transparent 25px) 0% 100%/30px 30px no-repeat,
+            radial-gradient(circle at 0 0, var(--mat-sys-surface) 0, var(--mat-sys-surface) 25px, transparent 25px) 100% 100%/30px 30px no-repeat,
+            linear-gradient(var(--mat-sys-surface), var(--mat-sys-surface)) 50% 50%/calc(100% - 10px) calc(100% - 60px) no-repeat,
+            linear-gradient(var(--mat-sys-surface), var(--mat-sys-surface)) 50% 50%/calc(100% - 60px) calc(100% - 10px) no-repeat,
+            linear-gradient(#810081 0%, #ffabf3 100%);
+    border-radius: 30px;
+    padding: 20px;
+    width: max-content;
+    box-sizing: content-box;
+}
+.adRow{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    min-width: 240px;
+}
+.type{
+    font-weight: 300;
+    font-size: 0.75rem;
+}
+.price{
+    background: linear-gradient(#eedee7 0%, #ffabf3 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    align-self: right;
+}
+img{
+    max-width: 100px;
+    max-height: 100px;
 }

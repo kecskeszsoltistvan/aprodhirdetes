@@ -41,6 +41,10 @@ export class ApiService {
   uploadAd(ad:FormData){
     return this.http.post(this.server + '/adverts/add', ad);
   }
+
+  getUserAds(uid:JSON){
+    return this.http.post(this.server + '/adverts/fetchByID', uid);
+  }
   // token-nel védett metódusok:
   //  return this.http.get(this.tokenHeader());
 }

@@ -36,6 +36,7 @@ export class UserAdsComponent {
     private auth: AuthService,
     private api: ApiService
   ){}
+  uid:string = "";
   un:string = "";
   ad:Advert = {
     id: "",
@@ -47,10 +48,22 @@ export class UserAdsComponent {
     image: null,
     category: Category.COK,
   }
+  userAds:any;
+
+  loadMyAds(uid:string) {
+    this.api.getUserAds(JSON.parse(`{"userID":${uid}}`)).subscribe((res) => {
+      this.userAds = res;
+      this.userAds = this.userAds.userAds;
+      console.log(this.userAds);
+    })
+  }
 
   ngOnInit() {
     this.un = this.auth.loggedUser().name;
+    this.uid = this.auth.loggedUser().id;
+    this.loadMyAds(this.uid);
   }
+
 
   CreateAdvert() {
     this.ad.userID = this.auth.loggedUser().id

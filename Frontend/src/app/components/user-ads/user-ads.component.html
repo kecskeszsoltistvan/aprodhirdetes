@@ -6,7 +6,21 @@
     <div id="row">
         <div class="floaty-panel side-panel" id="MyCurrentAdverts">
             <h2>My current adverts</h2>
+            @for (ad of userAds; track ad){
+                <div class="advert">
+                    <div class="adRow">
+                        <h2>{{ad.title}}</h2>
+                    </div>
+                    <p>{{ad.description}}</p>
+                    <img src="http://localhost:3000/uploads/{{ad.image}}">
+                    <div class="adRow">
+                        <p class="type">{{ad.category}}</p>
+                        <p class="price">{{ad.price}} HUF</p>
+                    </div>
+                </div>
+            }
         </div>
+        <!--
         <div id="middle">
             <div class="floaty-panel" id="TopPanel">
                 <h2>Top panel</h2>
@@ -23,7 +37,7 @@
                 </div>
             </div>
         </div>
-    
+    -->
         <div class="floaty-panel side-panel" id="CreateAdvert">
             <h2>Create a new advert</h2>
 
