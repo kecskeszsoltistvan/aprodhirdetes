@@ -5,9 +5,6 @@ import * as authMiddleWare from '../middlewares/auth.middleware';
 const upload = require('../middlewares/upload.middleware');
 
 const router = Router();
-/**
- * ADVERT modul útvonalai
- */
 
 // add new ad;
 router.post('/add', upload.single('file'), advertController.add, fileController.uploadFile);

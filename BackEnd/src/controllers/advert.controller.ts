@@ -56,7 +56,6 @@ export const deleteByIMG = async (req, res) => {
     console.log(`Delete called...`);
     console.log(req.params.image)
     try{
-        //await AppDataSource.createQueryBuilder().delete().from(Advertisement).where(`image = ${req.params.image}`).execute()
         const ad = await AppDataSource.manager.findOneBy(Advertisement, {image: req.params.image})
         await AppDataSource.manager.delete(Advertisement, ad);
         return res.status(200).json({message: `Ad successfully deleted`});
